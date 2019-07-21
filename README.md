@@ -1,7 +1,6 @@
 episodescript
 =============
-[![pypi](https://badge.fury.io/py/episodescript.svg)](https://badge.fury.io/py/episodescript)
-
+[![travis](https://travis-ci.org/kota7/episodescript.svg?branch=master)](https://travis-ci.org/kota7/episodescript)[![pypi](https://badge.fury.io/py/episodescript.svg)](https://badge.fury.io/py/episodescript)
 Retrieve TV Show Scripts.
 
 
