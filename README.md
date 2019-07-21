@@ -5,19 +5,24 @@ Retrieve TV Show Scripts.
 
 ## Install
 
-* From GitHub.
+* From PyPi.
 
 ```
-git clone https://github.com/kota7/episodescript
-pip install -U episodescript
+pip install episodescript
 ```
 
-* Recommended for Conda users.
+* Alternatively, recommended for Conda users.
 
 ```
 conda install -y beautifulsoup4 'html5lib<1'
 git clone https://github.com/kota7/episodescript
-pip install -U episodescript/ --no-deps
+pip install episodescript --no-deps
+```
+
+* Alternatively, from GitHub.
+```
+git clone https://github.com/kota7/episodescript
+pip install ./episodescript
 ```
 
 
