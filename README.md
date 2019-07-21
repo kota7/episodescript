@@ -46,7 +46,12 @@ episode-script the-mentalist 2 6 | less
 >>> from episodescript import scrape_episode_scripts
 >>> title, script = scrape_episode_scripts("the-mentalist", 2, 6)
 >>> print(title)
+Black Gold and Red Blood
 >>> print(script)
+So we got Kirby Hines, 29-year-old.
+ Local boy, welder.
+ That's all we got.
+....
 ```
 
 

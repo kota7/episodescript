@@ -2,7 +2,11 @@
 
 from argparse import ArgumentParser
 import sys
-from urllib.request import urlopen
+try:
+    from urllib.request import urlopen
+except:
+    from urllib2 import urlopen  # python 2
+    
 from bs4 import BeautifulSoup as bs
 
 
