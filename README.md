@@ -48,3 +48,9 @@ episode-script the-mentalist 2 6 | less
 >>> print(title)
 >>> print(script)
 ```
+
+
+## Note
+
+This program relies on the website [TV Show Episode Script](https://www.springfieldspringfield.co.uk/tv_show_episode_scripts.php).
+See this page for available TV show names.
