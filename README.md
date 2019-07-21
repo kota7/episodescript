@@ -1,5 +1,7 @@
 episodescript
 =============
+[![pypi](https://badge.fury.io/py/mecabwrap.svg)](https://badge.fury.io/py/mecabwrap)
+
 Retrieve TV Show Scripts.
 
 
