@@ -17,7 +17,6 @@ pip install episodescript
 
 ```
 conda install -y beautifulsoup4 'html5lib<1'
-git clone https://github.com/kota7/episodescript
 pip install episodescript --no-deps
 ```
 
