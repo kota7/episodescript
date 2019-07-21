@@ -1,6 +1,6 @@
 episodescript
 =============
-Retrieve TV Show Script.
+Retrieve TV Show Scripts.
 
 
 ## Install
@@ -12,7 +12,7 @@ git clone https://github.com/kota7/episodescript
 pip install -U episodescript
 ```
 
-* Alternatively, recommended for Conda users.
+* Recommended for Conda users.
 
 ```
 conda install -y beautifulsoup4 'html5lib<1'
@@ -27,7 +27,7 @@ pip install -U episodescript/ --no-deps
 episode-script the-mentalist 2 6
 ```
   
-If you want to read step by step:
+Or, if you want to read step by step:
   
 ```
 episode-script the-mentalist 2 6 | less
