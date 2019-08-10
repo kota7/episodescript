@@ -68,7 +68,7 @@ def search_shows(keyword):
 
     # loop over pages
     shows = []
-    baseurl = url + "&page=%d" 
+    baseurl = url 
     for page in range(1, maxpage + 1):
         # find the shows in this page and append
         items = soup.find_all("a", {"class":"script-list-item"})
@@ -83,7 +83,7 @@ def search_shows(keyword):
             break
 
         # get the next page
-        url = baseurl % (page + 1)  # done with page, so next is page + 1 
+        url = baseurl + ("&page=%d" % (page + 1))  # done with page, so next is page + 1 
         logger.debug("Reading %s", url)
         x = urlopen(url).read()
         soup = bs(x, features="html5lib")
@@ -95,10 +95,10 @@ def search_shows(keyword):
 
 def episode_script_command():
     parser = ArgumentParser(description="TV Show Script")
-    parser.add_argument("show", type=str, help="TV show id")
-    parser.add_argument("season", type=int, nargs="?", default=1, help="Season number")
-    parser.add_argument("episode", type=int, nargs="?", default=1, help="Episode number")
-    parser.add_argument("--search", action="store_true", help="Keyword search of shows")
+    parser.add_argument("show", type=str, help="TV show id. If `--search`, used as the keyword")
+    parser.add_argument("season", type=int, nargs="?", default=1, help="Season number (default=1)")
+    parser.add_argument("episode", type=int, nargs="?", default=1, help="Episode number (default=1)")
+    parser.add_argument("--search", action="store_true", help="Search shows by keyword")
     args = parser.parse_args()
 
     if args.search:
