@@ -9,7 +9,7 @@ try:
 except:
     # python 2
     from urllib2 import urlopen  
-    from urllib import quote, urlparse
+    from urllib import quote 
     from urlparse import urlparse, parse_qs
 from bs4 import BeautifulSoup as bs
 
