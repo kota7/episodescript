@@ -51,7 +51,7 @@ def scrape_episode_scripts(show, season, episode):
 def search_shows(keyword):
     baseurl = "https://www.springfieldspringfield.co.uk/tv_show_episode_scripts.php?search=%s"
     url = baseurl % quote(keyword)
-    logger.debug("Reading {} ...".format(url))
+    logger.debug("Reading %s", url)
     x = urlopen(url).read()
     soup = bs(x, features="html5lib")
 
@@ -61,17 +61,14 @@ def search_shows(keyword):
         logger.error("Page links not found")
         return [] 
     pagelinks = pagination.find_all("a")
-    if len(pagelinks) == 0:
-        maxpage = 1
-    else:
-        pagelinks = [page.get("href") for page in pagelinks if page.has_attr("href")] 
-        pagelinks = [page for page in pagelinks if page.find("page=") > 0]
-        maxpage = len(pagelinks) 
+    pagelinks = [page.get("href") for page in pagelinks if page.has_attr("href")] 
+    pagelinks = [page for page in pagelinks if page.find("page=") > 0]
+    maxpage = len(pagelinks) + 1  # add 1 because the current page (i.e. first page) has not link
     logger.debug("Max page is %d", maxpage)
 
     # loop over pages
     shows = []
-    baseurl = url + ";page=%d" 
+    baseurl = url + "&page=%d" 
     for page in range(1, maxpage + 1):
         # find the shows in this page and append
         items = soup.find_all("a", {"class":"script-list-item"})
@@ -87,9 +84,11 @@ def search_shows(keyword):
 
         # get the next page
         url = baseurl % (page + 1)  # done with page, so next is page + 1 
+        logger.debug("Reading %s", url)
         x = urlopen(url).read()
         soup = bs(x, features="html5lib")
-    
+    shows = list(set(shows))  # remove duplicates 
+    shows.sort()
     return shows 
 
 
