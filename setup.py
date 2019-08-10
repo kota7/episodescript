@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='episodescript',
-    version='0.1.1',
+    version='0.1.2',
     description='Scraper for TV show episode script',
     author='Kota Mori', 
     author_email='kmori05@gmail.com',
