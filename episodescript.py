@@ -9,7 +9,8 @@ try:
 except:
     # python 2
     from urllib2 import urlopen  
-    from urllib import quote, urlparse, parse_qs
+    from urllib import quote, urlparse
+    from urlparse import urlparse, parse_qs
 from bs4 import BeautifulSoup as bs
 
 logger = getLogger(__name__)
