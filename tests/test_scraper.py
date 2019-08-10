@@ -16,8 +16,11 @@ class TestScraper(unittest.TestCase):
 class TestSearch(unittest.TestCase):
     def test_search(self):
         shows = search_shows(u"friends")
-        self.assertTrue(len(shows) >= 3)
+        self.assertTrue(len(shows) >= 5)
         
+        shows = search_shows(u"sherlock holmes")
+        self.assertTrue(len(shows) >= 3)
+
         shows = search_shows(u"all")
         self.assertTrue(len(shows) > 17)
         
