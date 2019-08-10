@@ -9,19 +9,19 @@ Retrieve TV Show Scripts.
 
 * From PyPi.
 
-```
+```bash
 $ pip install episodescript
 ```
 
 * Alternatively, recommended for Conda users.
 
-```
+```bash
 $ conda install -y beautifulsoup4 'html5lib<1'
 $ pip install episodescript --no-deps
 ```
 
 * Alternatively, from GitHub.
-```
+```bash
 $ git clone https://github.com/kota7/episodescript
 $ pip install ./episodescript
 ```
@@ -29,7 +29,7 @@ $ pip install ./episodescript
 
 ## Use the console command
 
-```
+```bash
 $ episode-script the-mentalist 2 6
 
 TV show script for the-mentalist, Season 2, Episode 6
@@ -43,7 +43,7 @@ So we got Kirby Hines, 29-year-old.
   
 Or, if you want to read lines step by step:
   
-```
+```bash
 $ episode-script the-mentalist 2 6 | less
 ```
 
@@ -51,7 +51,7 @@ $ episode-script the-mentalist 2 6 | less
 
 Use `--search` option to search TV shows.
 
-```
+```bash
 $ episode-script --search friends
 
 * Searching TV shows with keyword `friends`...
@@ -74,7 +74,7 @@ $ episode-script --search friends
 
 ## Use in a python script
 
-```
+```python
 >>> from episodescript import scrape_episode_scripts
 >>> title, script = scrape_episode_scripts("sherlock", 1, 3)
 >>> print(title)
